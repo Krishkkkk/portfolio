@@ -10,7 +10,7 @@
     <script src="script.js" defer></script>
     <style>
         html { scroll-behavior: smooth; }
-        body { display: flex; }
+        body { display: flex; flex-direction: column; }
         .sidebar {
             width: 250px;
             height: 100vh;
@@ -28,11 +28,26 @@
         .content { margin-left: 270px; padding: 20px; width: 100%; }
         section { padding: 60px 0; }
         footer { background: #343a40; color: white; padding: 20px 0; text-align: center; }
+        
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                text-align: center;
+            }
+            .sidebar img {
+                width: 150px;
+            }
+            .content { margin-left: 0; padding: 10px; }
+            .sidebar .nav-link { display: inline-block; margin: 5px; }
+        }
     </style>
 </head>
 <body>
     <nav class="sidebar">
-        <img src="Krish.jpg" alt="Krish">
+        <img src="profile.jpg" alt="Krish Jariwala">
         <h2>Krish Jariwala</h2>
         <p>Bachelor of Applied IT Student</p>
         <a class="nav-link" href="#home">Home</a>
